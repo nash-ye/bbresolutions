@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bbResolutions\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-03 15:58+0300\n"
+"PO-Revision-Date: 2014-10-03 16:02+0300\n"
+"Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
+"Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;esc_attr__;esc_html__;_e;esc_attr_e;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.6.6\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/bbpress/topic-view.php:32
+#, php-format
+msgid "Topic Resolution: %s"
+msgstr "حالة الموضوع: %s"
+
+#: ../includes/bbpress/topic-view.php:73
+msgid "Resolution:"
+msgstr "الحالة:"
+
+#: ../includes/bbpress/topic-view.php:88
+msgid "Update"
+msgstr "تحديث"
+
+#: ../includes/helpers.php:126
+msgid "None"
+msgstr "بدون"
+
+#: ../includes/manager.php:116 ../main.php:79
+msgid "Not a Question"
+msgstr "ليس سؤال"
+
+#: ../includes/manager.php:121 ../main.php:84
+msgid "Not Resolved"
+msgstr "بدون حل"
+
+#: ../includes/manager.php:126 ../main.php:89
+msgid "Resolved"
+msgstr "تم الحل"
+
+#: ../includes/manager.php:127 ../main.php:90
+msgid "[Resolved]"
+msgstr "[تم الحل]"
+
+#~ msgid "<b>%s</b> said:"
+#~ msgstr "<b>%s</b> قال :"
+
+#~ msgid "Quote"
+#~ msgstr "إقتبس"
+
+#~ msgid "Not resolved"
+#~ msgstr "لا يوجد حل"
+
+#~ msgid "Topic support status :"
+#~ msgstr "حالة الموضوع :"
+
+#~ msgid "Topic support status : %s"
+#~ msgstr "حالة الموضوع : %s"
+
+#~ msgid "Move the topic to :"
+#~ msgstr "نقل الموضوع إلى :"
+
+#~ msgid "Move"
+#~ msgstr "نقل"
+
+#~ msgid "Urgent"
+#~ msgstr "عاجل"
+
+#~ msgid "Unurgent"
+#~ msgstr "غير عاجل"
+
+#~ msgid ""
+#~ "This topic is currently marked as urgent , You can change the status to "
+#~ "%s ."
+#~ msgstr "هذا الموضوع تم تمييزه كـ عاجل ، بإمكانك تغيير الحالة إلى %s ."
+
+#~ msgid "This topic is currently marked as urgent ."
+#~ msgstr "هذا الموضوع تم تمييزه كـ عاجل ."
+
+#~ msgid "[Urgent]"
+#~ msgstr "[عاجل]"

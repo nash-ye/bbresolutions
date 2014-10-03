@@ -2,10 +2,10 @@
 /**
  * Plugin Name: bbResolutions
  * Plugin URI: https://github.com/nash-ye/bbResolutions
- * Description:
+ * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: http://nashwan-d.com
- * Version: 0.1
+ * Version: 0.2
  *
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,41 +18,108 @@ namespace bbResolutions;
  * @var float
  * @since 0.1
  */
-const VERSION = '0.1';
+const VERSION = '0.2';
 
 /**
- * @var float
+ * @var string
  * @since 0.1
  */
 const CODENAME = 'dexter';
 
 /**
- * Get the absolute system path to the plugin directory, or a file therein.
- *
- * @param string $path
- * @return string
- * @since 0.1
+ * @since 0.2
  */
-function get_path( $path = '' ) {
+final class Main {
 
-	$base = dirname( __FILE__ );
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function __construct() {
 
-	if ( ! empty( $path ) ) {
-		$path = path_join( $base, $path );
-	} else {
-		$path = untrailingslashit( $base );
+		$this->load_core();
+		$this->load_textdomain();
+		$this->register_defaults();
+
+		add_action( 'bbp_after_setup_actions', array( $this, 'after_bbpress_setup' ) );
+		add_action( 'bp_after_setup_actions', array( $this, 'after_buddypress_setup' ) );
+
 	}
 
-	return $path;
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function load_core() {
+
+		// Load core functions.
+		require plugin_dir_path( __FILE__ ) . 'includes/manager.php';
+		require plugin_dir_path( __FILE__ ) . 'includes/helpers.php';
+
+	}
+
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function load_textdomain() {
+
+		// Load the plugin translated strings.
+		load_plugin_textdomain( 'bbr', FALSE, basename( __DIR__ ) . '/languages' );
+
+	}
+
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function register_defaults() {
+
+		Manager::register( 'not-support', array(
+			'label'     => __( 'Not a Question', 'bbr' ),
+			'value'     => '1',
+		) );
+
+		Manager::register( 'not-resolved', array(
+			'label'     =>  __( 'Not Resolved', 'bbr' ),
+			'value'     => '2',
+		) );
+
+		Manager::register( 'resolved', array(
+			'label'     =>  __( 'Resolved', 'bbr' ),
+			'sticker'   => __( '[Resolved]', 'bbr' ),
+			'value'     => '3',
+		) );
+
+	}
+
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function after_bbpress_setup() {
+
+		if ( function_exists( 'is_bbpress' ) ) {
+			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-control.php';
+			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-actions.php';
+			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-view.php';
+		}
+
+	}
+
+	/**
+	 * @return void
+	 * @since 0.2
+	 */
+	public function after_buddypress_setup() {
+
+		if ( function_exists( 'is_buddypress' ) ) {
+			// TODO: Add support for BuddyPress plugin.
+		}
+
+	}
 
 }
 
-// Load core.
-require get_path( 'includes/manager.php' );
-require get_path( 'includes/helpers.php' );
-
-// Register the defaults.
-Manager::register_defaults();
-
-// Load bbPress depended functions.
-require get_path( 'includes/bbpress/topic.php' );
+// Hey Dexter!!
+new Main();

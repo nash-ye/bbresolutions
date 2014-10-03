@@ -30,7 +30,7 @@ class Manager {
 	 * @return array
 	 * @since 0.1
 	 */
-	public static function filter( array $args, $operator = 'AND') {
+	public static function filter( array $args, $operator = 'AND' ) {
 		return wp_list_filter( self::get_all(), $args, $operator );
 	}
 
@@ -101,38 +101,6 @@ class Manager {
 		self::$resolutions[ $key ] = $args;
 
 		return TRUE;
-
-	}
-
-	/**
-	 * @return bool
-	 * @since 0.1
-	 */
-	public static function register_defaults() {
-
-		$resolutions = array(
-
-			'not-support' => array(
-				'label'		=> __( 'Not a Question', 'bbr' ),
-				'value'		=> '1',
-			),
-
-			'not-resolved' => array(
-				'label'		=>  __( 'Not Resolved', 'bbr' ),
-				'value'		=> '2',
-			),
-
-			'resolved' => array(
-				'label'		=>  __( 'Resolved', 'bbr' ),
-				'sticker'	=> __( '[Resolved]', 'bbr' ),
-				'value'		=> '3',
-			),
-
-		);
-
-		foreach( $resolutions as $key => $args ) {
-			Manager::register( $key, $args );
-		}
 
 	}
 

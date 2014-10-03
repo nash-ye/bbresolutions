@@ -5,7 +5,7 @@
  * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: http://nashwan-d.com
- * Version: 0.2
+ * Version: 0.2.1
  *
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ namespace bbResolutions;
  * @var float
  * @since 0.1
  */
-const VERSION = '0.2';
+const VERSION = '0.2.1';
 
 /**
  * @var string

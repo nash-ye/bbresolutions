@@ -5,7 +5,7 @@
  * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: http://nashwan-d.com
- * Version: 0.2.1
+ * Version: 0.2.2
  *
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ namespace bbResolutions;
  * @var float
  * @since 0.1
  */
-const VERSION = '0.2.1';
+const VERSION = '0.2.2';
 
 /**
  * @var string
@@ -41,8 +41,17 @@ final class Main {
 		$this->load_textdomain();
 		$this->register_defaults();
 
-		add_action( 'bbp_after_setup_actions', array( $this, 'after_bbpress_setup' ) );
-		add_action( 'bp_after_setup_actions', array( $this, 'after_buddypress_setup' ) );
+		if ( did_action( 'bbp_after_setup_actions' ) ) {
+			$this->after_bbpress_setup();
+		} else {
+			add_action( 'bbp_after_setup_actions', array( $this, 'after_bbpress_setup' ) );
+		}
+
+		if ( did_action( 'bp_after_setup_actions' ) ) {
+			$this->after_buddypress_setup();
+		} else {
+			add_action( 'bp_after_setup_actions', array( $this, 'after_buddypress_setup' ) );
+		}
 
 	}
 

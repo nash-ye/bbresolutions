@@ -3,7 +3,7 @@ Contributors: alex-ye
 Tags: bbpress, buddypress, support
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 0.2
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ bbResolutions\Manager class to register more resolutions or unregister the ones 
 Developers can contribute to the source code on the [Github Repository](https://github.com/nash-ye/bbResolutions).
 
 == Changelog ==
+
+= 0.2.2 =
+* Fix Bug: bbPress & BuddyPress codes didn't loaded in some cases.
 
 = 0.2 =
 * Add the Arabic language.

@@ -123,7 +123,7 @@ function get_resolutions_dropdown( array $args = array() ) {
 	$output = '<select'. get_html_atts( $args['atts'] ) .'>';
 
 	if ( $args['show_none'] ) {
-		$output .= '<option value="">'. esc_html__( 'None', 'bbr' ) .'</option>';
+		$output .= '<option value="">'. esc_html__( 'None', 'bbResolutions' ) .'</option>';
 	}
 
 	if ( is_array( $args['resolutions'] ) ) {

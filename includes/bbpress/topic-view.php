@@ -29,7 +29,7 @@ function topic_resolution_feedback( $topic_id = 0 ) {
 			<div class="bbr-feedback">
 
 				<div class="bbr-inner-message bbr-topic-resolution-message">
-					<?php printf( __( 'Topic Resolution: %s', 'bbr' ), '<span class="bbr-topic-resolution">' . $topic_resolution->label . '<span>' ) ?>
+					<?php printf( __( 'Topic Resolution: %s', 'bbResolutions' ), '<span class="bbr-topic-resolution">' . $topic_resolution->label . '<span>' ) ?>
 				</div>
 
 			</div><?php
@@ -70,7 +70,7 @@ function topic_resolution_form( $topic_id = 0 ) {
 
 					<div class="bbr-field-wrapper">
 
-						<label for="bbr-topic-resolution"><?php esc_html_e( 'Resolution:', 'bbr' ) ?></label>
+						<label for="bbr-topic-resolution"><?php esc_html_e( 'Resolution:', 'bbResolutions' ) ?></label>
 
 						<?php
 
@@ -85,7 +85,7 @@ function topic_resolution_form( $topic_id = 0 ) {
 					</div>
 
 					<div class="bbr-submit-wrapper">
-						<input type="submit" value="<?php esc_attr_e( 'Update', 'bbr' ) ?>" />
+						<input type="submit" value="<?php esc_attr_e( 'Update', 'bbResolutions' ) ?>" />
 					</div>
 
 					<input type="hidden" name="bbr_topic_id" value="<?php echo esc_attr( $topic_id ) ?>" />
@@ -129,17 +129,17 @@ function get_topic_resolution_sticker( $topic_id = 0 ){
 		return;
 	}
 
-    $resolution = get_topic_resolution_object( $topic_id );
+	$resolution = get_topic_resolution_object( $topic_id );
 
-    if ( $resolution !== NULL && ! empty( $resolution->sticker ) ) {
+	if ( $resolution !== NULL && ! empty( $resolution->sticker ) ) {
 
 		$atts = array(
 			'class' => "bbr-resolution-sticker bbr-resolution-{$resolution->key}-sticker",
 			'title' => $resolution->label,
 		);
 
-        return '<span' . get_html_atts( $atts ) . '>' . $resolution->sticker . '</span>';
+		return '<span' . get_html_atts( $atts ) . '>' . $resolution->sticker . '</span>';
 
-    }
+	}
 
 }

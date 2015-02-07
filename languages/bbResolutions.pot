@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bbResolutions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-03 15:58+0300\n"
-"PO-Revision-Date: 2014-10-03 16:04+0300\n"
+"POT-Creation-Date: 2015-02-07 10:06+0300\n"
+"PO-Revision-Date: 2015-02-07 10:06+0300\n"
 "Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
 "Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
 "Language: en\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Topic Resolution: %s"
 msgstr ""
 
-#: ../includes/bbpress/topic-view.php:73
+#: ../includes/bbpress/topic-view.php:73 ../includes/bbpress/widgets.php:170
 msgid "Resolution:"
 msgstr ""
 
@@ -32,22 +32,63 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
+#: ../includes/bbpress/widgets.php:20
+msgid "(bbResolutions) Recent Topics"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:21
+msgid "A list of recent topics with an option to set the resolution."
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:92
+#, php-format
+msgid "by %1$s"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:158
+msgid "Title:"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:163
+msgid "Forum ID:"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:166
+msgid "\"0\" to show only root - \"any\" to show all"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:175
+msgid "Maximum topics to show:"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:180
+msgid "Show topic author:"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:185
+msgid "Show topic date:"
+msgstr ""
+
+#: ../includes/bbpress/widgets.php:200
+msgid "Recent Topics"
+msgstr ""
+
 #: ../includes/helpers.php:126
 msgid "None"
 msgstr ""
 
-#: ../includes/manager.php:116 ../main.php:79
+#: ../main.php:88
 msgid "Not a Question"
 msgstr ""
 
-#: ../includes/manager.php:121 ../main.php:84
+#: ../main.php:93
 msgid "Not Resolved"
 msgstr ""
 
-#: ../includes/manager.php:126 ../main.php:89
+#: ../main.php:98
 msgid "Resolved"
 msgstr ""
 
-#: ../includes/manager.php:127 ../main.php:90
+#: ../main.php:99
 msgid "[Resolved]"
 msgstr ""

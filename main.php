@@ -5,7 +5,7 @@
  * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: http://nashwan-d.com
- * Version: 0.2.2
+ * Version: 0.2.3
  *
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ namespace bbResolutions;
  * @var float
  * @since 0.1
  */
-const VERSION = '0.2.2';
+const VERSION = '0.2.3';
 
 /**
  * @var string
@@ -74,7 +74,7 @@ final class Main {
 	public function load_textdomain() {
 
 		// Load the plugin translated strings.
-		load_plugin_textdomain( 'bbr', FALSE, basename( __DIR__ ) . '/languages' );
+		load_plugin_textdomain( 'bbResolutions', FALSE, basename( __DIR__ ) . '/languages' );
 
 	}
 
@@ -85,18 +85,18 @@ final class Main {
 	public function register_defaults() {
 
 		Manager::register( 'not-support', array(
-			'label'     => __( 'Not a Question', 'bbr' ),
+			'label'     => __( 'Not a Question', 'bbResolutions' ),
 			'value'     => '1',
 		) );
 
 		Manager::register( 'not-resolved', array(
-			'label'     =>  __( 'Not Resolved', 'bbr' ),
+			'label'     =>  __( 'Not Resolved', 'bbResolutions' ),
 			'value'     => '2',
 		) );
 
 		Manager::register( 'resolved', array(
-			'label'     =>  __( 'Resolved', 'bbr' ),
-			'sticker'   => __( '[Resolved]', 'bbr' ),
+			'label'     =>  __( 'Resolved', 'bbResolutions' ),
+			'sticker'   => __( '[Resolved]', 'bbResolutions' ),
 			'value'     => '3',
 		) );
 
@@ -112,6 +112,7 @@ final class Main {
 			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-control.php';
 			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-actions.php';
 			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-view.php';
+			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/widgets.php';
 		}
 
 	}

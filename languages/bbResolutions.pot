@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bbResolutions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-07 10:06+0300\n"
-"PO-Revision-Date: 2015-02-07 10:06+0300\n"
+"POT-Creation-Date: 2016-02-22 16:06+0300\n"
+"PO-Revision-Date: 2016-02-22 16:06+0300\n"
 "Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
 "Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
 "Language: en\n"
@@ -13,22 +13,21 @@ msgstr ""
 "X-Poedit-KeywordsList: __;esc_attr__;esc_html__;_e;esc_attr_e;esc_html_e;_x;"
 "_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.6\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/bbpress/topic-view.php:32
+#: ../includes/bbpress/topic-view.php:36
 #, php-format
 msgid "Topic Resolution: %s"
 msgstr ""
 
-#: ../includes/bbpress/topic-view.php:73 ../includes/bbpress/widgets.php:170
+#: ../includes/bbpress/topic-view.php:76 ../includes/bbpress/widgets.php:168
 msgid "Resolution:"
 msgstr ""
 
-#: ../includes/bbpress/topic-view.php:88
+#: ../includes/bbpress/topic-view.php:89
 msgid "Update"
 msgstr ""
 
@@ -45,31 +44,31 @@ msgstr ""
 msgid "by %1$s"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:158
+#: ../includes/bbpress/widgets.php:156
 msgid "Title:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:163
+#: ../includes/bbpress/widgets.php:161
 msgid "Forum ID:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:166
+#: ../includes/bbpress/widgets.php:164
 msgid "\"0\" to show only root - \"any\" to show all"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:175
+#: ../includes/bbpress/widgets.php:173
 msgid "Maximum topics to show:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:180
+#: ../includes/bbpress/widgets.php:178
 msgid "Show topic author:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:185
+#: ../includes/bbpress/widgets.php:183
 msgid "Show topic date:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:200
+#: ../includes/bbpress/widgets.php:198
 msgid "Recent Topics"
 msgstr ""
 
@@ -77,18 +76,18 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: ../main.php:88
+#: ../main.php:100
 msgid "Not a Question"
 msgstr ""
 
-#: ../main.php:93
+#: ../main.php:105
 msgid "Not Resolved"
 msgstr ""
 
-#: ../main.php:98
+#: ../main.php:110
 msgid "Resolved"
 msgstr ""
 
-#: ../main.php:99
+#: ../main.php:111
 msgid "[Resolved]"
 msgstr ""

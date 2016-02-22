@@ -35,7 +35,7 @@ class Manager {
 	}
 
 	/**
-	 * @return object|NULL
+	 * @return object|null
 	 * @since 0.1
 	 */
 	public static function get_by_key( $key ) {
@@ -47,7 +47,7 @@ class Manager {
 	}
 
 	/**
-	 * @return object|NULL
+	 * @return object|null
 	 * @since 0.1
 	 */
 	public static function get_by_value( $value ) {
@@ -73,7 +73,7 @@ class Manager {
 	public static function register( $key, array $args ) {
 
 		if ( isset( self::$resolutions[ $key ] ) ) {
-			return FALSE;
+			return false;
 		}
 
 		$args = (object) array_merge( array(
@@ -93,14 +93,14 @@ class Manager {
 			$resolution = self::get_by_value( $args->value );
 
 			if ( ! is_null( $resolution ) ) {
-				return FALSE;
+				return false;
 			}
 
 		}
 
 		self::$resolutions[ $key ] = $args;
 
-		return TRUE;
+		return true;
 
 	}
 
@@ -111,12 +111,12 @@ class Manager {
 	public static function unregister( $key ) {
 
 		if ( ! isset( self::$resolutions[ $key ] ) ) {
-			return FALSE;
+			return false;
 		}
 
 		unset( self::$resolutions[ $key ] );
 
-		return TRUE;
+		return true;
 
 	}
 

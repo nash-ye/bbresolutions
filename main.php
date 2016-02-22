@@ -5,26 +5,38 @@
  * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: http://nashwan-d.com
- * Version: 0.2.3
+ * Version: 0.2.4
  *
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Copyright (c) 2014 - 2015 Nashwan Doaqan.  All rights reserved.
+ * Copyright (c) 2014 - 2016 Nashwan Doaqan.  All rights reserved.
  */
 
 namespace bbResolutions;
 
 /**
- * @var float
+ * @var string
  * @since 0.1
  */
-const VERSION = '0.2.3';
+define( 'bbResolutions\VERSION', '0.2.4' );
 
 /**
  * @var string
  * @since 0.1
  */
-const CODENAME = 'dexter';
+define( 'bbResolutions\CODENAME', 'dexter' );
+
+/**
+ * @var string
+ * @since 0.2.4
+ */
+define( 'bbResolutions\DIR_URL', plugin_dir_url( __FILE__ ) );
+
+/**
+ * @var string
+ * @since 0.2.4
+ */
+define( 'bbResolutions\DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * @since 0.2
@@ -62,8 +74,8 @@ final class Main {
 	public function load_core() {
 
 		// Load core functions.
-		require plugin_dir_path( __FILE__ ) . 'includes/manager.php';
-		require plugin_dir_path( __FILE__ ) . 'includes/helpers.php';
+		require trailingslashit( DIR_PATH ) . 'includes/manager.php';
+		require trailingslashit( DIR_PATH ) . 'includes/helpers.php';
 
 	}
 
@@ -74,7 +86,7 @@ final class Main {
 	public function load_textdomain() {
 
 		// Load the plugin translated strings.
-		load_plugin_textdomain( 'bbResolutions', FALSE, basename( __DIR__ ) . '/languages' );
+		load_plugin_textdomain( 'bbResolutions', false, basename( DIR_PATH ) . '/languages' );
 
 	}
 
@@ -109,10 +121,10 @@ final class Main {
 	public function after_bbpress_setup() {
 
 		if ( function_exists( 'is_bbpress' ) ) {
-			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-control.php';
-			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-actions.php';
-			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/topic-view.php';
-			require plugin_dir_path( __FILE__ ) . 'includes/bbpress/widgets.php';
+			require trailingslashit( DIR_PATH ) . 'includes/bbpress/topic-control.php';
+			require trailingslashit( DIR_PATH ) . 'includes/bbpress/topic-actions.php';
+			require trailingslashit( DIR_PATH ) . 'includes/bbpress/topic-view.php';
+			require trailingslashit( DIR_PATH ) . 'includes/bbpress/widgets.php';
 		}
 
 	}
@@ -131,5 +143,5 @@ final class Main {
 
 }
 
-// Hey Dexter!!
+// Hey Dexter!
 new Main();

@@ -11,37 +11,37 @@ add_action( 'template_redirect', 'bbResolutions\topic_actions_handler', 11 );
 function topic_actions_handler() {
 
 	if ( ! isset( $_POST['bbr_action'] ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( 'bbr_update_topic_resolution' !== $_POST['bbr_action'] ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! isset( $_POST['bbr_nonce'] ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! wp_verify_nonce( $_POST['bbr_nonce'], 'bbr_topic_resolution' ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! isset( $_POST['bbr_topic_id'] ) ) {
-		return FALSE;
+		return false;
 	}
 
 	$topic_id = intval( $_POST['bbr_topic_id'] );
 
 	if ( ! $topic_id || ! bbp_is_topic( $topic_id ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! current_user_can( 'edit_topic', $topic_id ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! isset( $_POST['bbr_topic_resolution'] ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! empty( $_POST['bbr_topic_resolution'] ) ) {

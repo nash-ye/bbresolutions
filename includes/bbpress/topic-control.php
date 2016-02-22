@@ -3,7 +3,7 @@
 namespace bbResolutions;
 
 /**
- * @return string|NULL
+ * @return string|null
  * @since 0.1
  */
 function get_topic_resolution_key( $topic_id ) {
@@ -11,7 +11,7 @@ function get_topic_resolution_key( $topic_id ) {
 	$object = get_topic_resolution_object( $topic_id );
 
 	if ( empty( $object ) ) {
-		return FALSE;
+		return false;
 	}
 
 	return $object->key;
@@ -27,15 +27,15 @@ function get_topic_resolution_value( $topic_id ) {
 	$topic_id = bbp_get_topic_id( $topic_id );
 
 	if ( empty( $topic_id ) ) {
-		return FALSE;
+		return false;
 	}
 
-	return get_post_meta( $topic_id, 'bbr_topic_resolution', TRUE );
+	return get_post_meta( $topic_id, 'bbr_topic_resolution', true );
 
 }
 
 /**
- * @return object|NULL
+ * @return object|null
  * @since 0.1
  */
 function get_topic_resolution_object( $topic_id ) {
@@ -57,7 +57,7 @@ function update_topic_resolution( $topic_id, $new_resolution ) {
 	$topic_id = bbp_get_topic_id( $topic_id );
 
 	if ( empty( $topic_id ) ) {
-		return FALSE;
+		return false;
 	}
 
 	if ( ! is_object( $new_resolution ) ) {
@@ -65,13 +65,13 @@ function update_topic_resolution( $topic_id, $new_resolution ) {
 	}
 
 	if ( empty( $new_resolution ) ) {
-		 return FALSE;
+		 return false;
 	}
 
 	$old_resolution = get_topic_resolution_object( $topic_id );
 
 	if ( $old_resolution && $new_resolution->value == $old_resolution->value ) {
-		 return TRUE;
+		 return true;
 	}
 
 	do_action( 'bbr_pre_update_topic_resolution', $topic_id, $new_resolution, $old_resolution );
@@ -93,7 +93,7 @@ function delete_topic_resolution( $topic_id ) {
 	$topic_id = bbp_get_topic_id( $topic_id );
 
 	if ( empty( $topic_id ) ) {
-		 return FALSE;
+		 return false;
 	}
 
 	do_action( 'bbr_pre_delete_topic_resolution', $topic_id );

@@ -108,7 +108,7 @@ function get_resolutions_dropdown( array $args = array() ) {
 		),
 		'selected'    => '',
 		'resolutions' => 'all',
-		'show_none'   => TRUE,
+		'show_none'   => true,
 	), $args );
 
 	if ( 'all' === $args['resolutions'] ) {

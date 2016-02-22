@@ -2,8 +2,8 @@
 Contributors: alex-ye
 Tags: bbpress, buddypress, support
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 0.2.3
+Tested up to: 4.4.2
+Stable tag: 0.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ Developers can contribute to the source code on the [Github Repository](https://
 * Have fun :-)
 
 == Changelog ==
+
+= 0.2.4 =
+* Add new WP filters "bbr_show_topic_resolution_form" and "bbr_show_topic_resolution_feedback".
 
 = 0.2.3 =
 * Change the plugin textdomain to 'bbResolutions'.

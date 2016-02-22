@@ -37,8 +37,8 @@ class Topics_Widget extends \WP_Widget {
 			'posts_per_page'      => (int) $settings['max_shown'],
 			'post_status'         => array( bbp_get_public_status_id(), bbp_get_closed_status_id() ),
 			'post_parent'         => $settings['forum'],
-			'ignore_sticky_posts' => TRUE,
-			'no_found_rows'       => TRUE,
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
 			'order'               => 'DESC',
 		);
 
@@ -166,7 +166,7 @@ class Topics_Widget extends \WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'resolution' ) ?>"><?php _e( 'Resolution:', 'bbResolutions' ) ?></label>
-			<?php resolutions_dropdown( array( 'id' => $this->get_field_id( 'resolution' ), 'name' => $this->get_field_name( 'resolution' ), 'selected' => $settings['resolution'], 'show_none' => FALSE ) ); ?>
+			<?php resolutions_dropdown( array( 'id' => $this->get_field_id( 'resolution' ), 'name' => $this->get_field_name( 'resolution' ), 'selected' => $settings['resolution'], 'show_none' => false ) ); ?>
 		</p>
 
 		<p>

@@ -14,7 +14,11 @@ function topic_resolution_feedback( $topic_id = 0 ) {
 		return;
 	}
 
-	$template = apply_filters( 'bbr_template_topic_resolution_feedback', FALSE );
+	if ( ! apply_filters( 'bbr_show_topic_resolution_feedback', true, $topic_id ) ) {
+		return;
+	}
+
+	$template = apply_filters( 'bbr_template_topic_resolution_feedback', false );
 
 	if ( ! empty( $template ) && file_exists( $template ) ) {
 
@@ -54,9 +58,9 @@ function topic_resolution_form( $topic_id = 0 ) {
 		return;
 	}
 
-	if ( current_user_can( 'edit_topic', $topic_id ) ) {
+	if ( current_user_can( 'edit_topic', $topic_id ) && apply_filters( 'bbr_show_topic_resolution_form', true, $topic_id ) ) {
 
-		$template = apply_filters( 'bbr_template_topic_resolution_form', FALSE );
+		$template = apply_filters( 'bbr_template_topic_resolution_form', false );
 
 		if ( ! empty( $template ) && file_exists( $template ) ) {
 
@@ -69,9 +73,7 @@ function topic_resolution_form( $topic_id = 0 ) {
 				<form method="POST" action="<?php echo esc_url( home_url( '/' ) ) ?>" class="bbr-form bbr-form-topic-resolution">
 
 					<div class="bbr-field-wrapper">
-
 						<label for="bbr-topic-resolution"><?php esc_html_e( 'Resolution:', 'bbResolutions' ) ?></label>
-
 						<?php
 
 							resolutions_dropdown( array(
@@ -81,7 +83,6 @@ function topic_resolution_form( $topic_id = 0 ) {
 							) );
 
 						?>
-
 					</div>
 
 					<div class="bbr-submit-wrapper">
@@ -131,7 +132,7 @@ function get_topic_resolution_sticker( $topic_id = 0 ){
 
 	$resolution = get_topic_resolution_object( $topic_id );
 
-	if ( $resolution !== NULL && ! empty( $resolution->sticker ) ) {
+	if ( $resolution !== null && ! empty( $resolution->sticker ) ) {
 
 		$atts = array(
 			'class' => "bbr-resolution-sticker bbr-resolution-{$resolution->key}-sticker",

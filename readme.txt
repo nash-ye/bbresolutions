@@ -2,8 +2,9 @@
 Contributors: alex-ye
 Tags: bbpress, buddypress, support
 Requires at least: 3.0
-Tested up to: 4.4.2
-Stable tag: 0.2.4
+Tested up to: 5.2.2
+Requires PHP: 5.3
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,12 +12,10 @@ A bbPress plugin to let you set topic resolutions.
 
 == Description ==
 
-= Important Notes: =
-* This plugin requires at least PHP 5.3.x.
+= Important Notes =
 * This plugin requires bbPress 2.0 at least.
 
-bbResolutions, will let you set topic resolutions (Resolved, Not resolved and Not a question). It's very clean, flexible and
-easy-to-install plugin.
+bbResolutions, will let you set topic resolutions (Resolved, Not resolved and Not a question). It's very clean, flexible and easy-to-install plugin.
 
 = Contributing =
 Developers can contribute to the source code on the [Github Repository](https://github.com/nash-ye/bbResolutions).
@@ -28,6 +27,10 @@ Developers can contribute to the source code on the [Github Repository](https://
 * Have fun :-)
 
 == Changelog ==
+
+= 0.3 =
+* Change the plugin textdomain to 'bbresolutions'.
+* Better code style formatting.
 
 = 0.2.4 =
 * Add new WP filters "bbr_show_topic_resolution_form" and "bbr_show_topic_resolution_feedback".

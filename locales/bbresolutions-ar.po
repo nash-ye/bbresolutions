@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bbResolutions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-22 16:08+0300\n"
-"PO-Revision-Date: 2016-02-22 16:09+0300\n"
+"POT-Creation-Date: 2019-07-19 19:42+0300\n"
+"PO-Revision-Date: 2019-07-19 19:42+0300\n"
 "Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
 "Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
 "Language: ar\n"
@@ -13,22 +13,22 @@ msgstr ""
 "X-Poedit-KeywordsList: __;esc_attr__;esc_html__;_e;esc_attr_e;esc_html_e;_x;"
 "_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/bbpress/topic-view.php:36
+#: ../includes/bbpress/topic-view.php:34
 #, php-format
 msgid "Topic Resolution: %s"
 msgstr "حالة الموضوع: %s"
 
-#: ../includes/bbpress/topic-view.php:76 ../includes/bbpress/widgets.php:168
+#: ../includes/bbpress/topic-view.php:69 ../includes/bbpress/widgets.php:156
 msgid "Resolution:"
 msgstr "الحالة:"
 
-#: ../includes/bbpress/topic-view.php:89
+#: ../includes/bbpress/topic-view.php:81
 msgid "Update"
 msgstr "تحديث"
 
@@ -40,56 +40,56 @@ msgstr "(bbResolutions) أحدث الموضوعات"
 msgid "A list of recent topics with an option to set the resolution."
 msgstr "قائمة بأحدث الموضوعات مع خيار لتحديد الحالة."
 
-#: ../includes/bbpress/widgets.php:92
+#: ../includes/bbpress/widgets.php:85
 #, php-format
 msgid "by %1$s"
 msgstr "بواسطة %1$s"
 
-#: ../includes/bbpress/widgets.php:156
+#: ../includes/bbpress/widgets.php:144
 msgid "Title:"
 msgstr "العنوان:"
 
-#: ../includes/bbpress/widgets.php:161
+#: ../includes/bbpress/widgets.php:149
 msgid "Forum ID:"
 msgstr "الرقم المعرّف (ID) للمنتدى:"
 
-#: ../includes/bbpress/widgets.php:164
+#: ../includes/bbpress/widgets.php:152
 msgid "\"0\" to show only root - \"any\" to show all"
 msgstr "\"0\" لإظهار الجذر فقط - \"any\" لإظهار الكل"
 
-#: ../includes/bbpress/widgets.php:173
+#: ../includes/bbpress/widgets.php:161
 msgid "Maximum topics to show:"
 msgstr "الحد الأقصى لعدد الموضوعات:"
 
-#: ../includes/bbpress/widgets.php:178
+#: ../includes/bbpress/widgets.php:166
 msgid "Show topic author:"
 msgstr "عرض كاتب الموضوع:"
 
-#: ../includes/bbpress/widgets.php:183
+#: ../includes/bbpress/widgets.php:171
 msgid "Show topic date:"
 msgstr "عرض تاريخ الموضوع:"
 
-#: ../includes/bbpress/widgets.php:198
+#: ../includes/bbpress/widgets.php:186
 msgid "Recent Topics"
 msgstr "أحدث الموضوعات"
 
-#: ../includes/helpers.php:126
+#: ../includes/helpers.php:116
 msgid "None"
 msgstr "بدون"
 
-#: ../main.php:100
+#: ../main.php:98
 msgid "Not a Question"
 msgstr "ليس سؤال"
 
-#: ../main.php:105
+#: ../main.php:103
 msgid "Not Resolved"
 msgstr "بدون حل"
 
-#: ../main.php:110
+#: ../main.php:108
 msgid "Resolved"
 msgstr "تم الحل"
 
-#: ../main.php:111
+#: ../main.php:109
 msgid "[Resolved]"
 msgstr "[تم الحل]"
 

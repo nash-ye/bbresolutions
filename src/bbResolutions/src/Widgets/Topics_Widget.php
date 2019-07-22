@@ -7,7 +7,9 @@
  */
 namespace bbResolutions\Widgets;
 
+use WP_Query;
 use WP_Widget;
+use bbResolutions\Manager;
 
 /**
  * Recent topics widget class.
@@ -59,7 +61,7 @@ class Topics_Widget extends WP_Widget
             );
         }
 
-        $query = new \WP_Query($query_args);
+        $query = new WP_Query($query_args);
 
         if (! $query->have_posts()) {
             return;

@@ -79,7 +79,7 @@ function get_html_atts(array $atts, array $args = array())
 
 /**
  * @return void
- * @since 0.1
+ * @since  0.1
  */
 function resolutions_dropdown(array $args = array())
 {
@@ -88,7 +88,7 @@ function resolutions_dropdown(array $args = array())
 
 /**
  * @return string
- * @since 0.1
+ * @since  0.1
  */
 function get_resolutions_dropdown(array $args = array())
 {
@@ -115,7 +115,7 @@ function get_resolutions_dropdown(array $args = array())
     $output = '<select'. get_html_atts($args['atts']) .'>';
 
     if ($args['show_none']) {
-        $output .= '<option value="">'. esc_html__('None', 'bbresolutions') .'</option>';
+        $output .= '<option value="">' . esc_html__('None', 'bbresolutions') . '</option>';
     }
 
     if (is_array($args['resolutions'])) {

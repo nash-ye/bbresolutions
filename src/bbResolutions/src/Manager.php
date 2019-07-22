@@ -1,8 +1,15 @@
 <?php
-
+/**
+ * Resolutions manager class file.
+ * 
+ * @package bbResolutions
+ * @since   0.1
+ */
 namespace bbResolutions;
 
 /**
+ * Resolutions manager class.
+ * 
  * @since 0.1
  */
 class Manager
@@ -13,12 +20,14 @@ class Manager
      * @var   array
      * @since 0.1
      */
-    private static $resolutions = array();
+    protected static $resolutions = array();
 
 
     /*** Methods **************************************************************/
 
     /**
+     * Retrieve all registered resolutions.
+     * 
      * @return array
      * @since  0.1
      */
@@ -28,6 +37,8 @@ class Manager
     }
 
     /**
+     * Retrieve filtered list of the registered resolutions.
+     * 
      * @return array
      * @since  0.1
      */
@@ -37,6 +48,8 @@ class Manager
     }
 
     /**
+     * Retrieve a registered resolution by key.
+     * 
      * @return object|null
      * @since  0.1
      */
@@ -48,6 +61,8 @@ class Manager
     }
 
     /**
+     * Retrieve a registered resolution by value.
+     * 
      * @return object|null
      * @since  0.1
      */
@@ -67,6 +82,8 @@ class Manager
     }
 
     /**
+     * Register a new resolution.
+     * 
      * @return bool
      * @since  0.1
      */
@@ -100,6 +117,8 @@ class Manager
     }
 
     /**
+     * Unregister a resolution.
+     * 
      * @return bool
      * @since  0.1
      */

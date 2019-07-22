@@ -1,0 +1,23 @@
+{
+    "name": "nash-ye/bbresolutions",
+    "description": "bbResolutions WordPress plugin.",
+    "type": "project",
+    "homepage": "https://github.com/nash-ye/bbResolutions",
+    "license": "GPL-2.0",
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "5.3"
+        }
+    },
+    "require": {
+        "php": "^5.3"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "bbResolutions\\": "src/bbResolutions/src/"
+        }
+    }
+}

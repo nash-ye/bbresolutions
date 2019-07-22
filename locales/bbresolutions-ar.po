@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bbResolutions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-19 19:42+0300\n"
-"PO-Revision-Date: 2019-07-19 19:42+0300\n"
+"POT-Creation-Date: 2019-07-22 12:52+0300\n"
+"PO-Revision-Date: 2019-07-22 12:52+0300\n"
 "Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
 "Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
 "Language: ar\n"
@@ -19,79 +19,80 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/bbpress/topic-view.php:34
-#, php-format
-msgid "Topic Resolution: %s"
-msgstr "حالة الموضوع: %s"
+#: ../src/bbResolutions/src/Main.php:71
+msgid "Not a Question"
+msgstr "ليس سؤال"
 
-#: ../includes/bbpress/topic-view.php:69 ../includes/bbpress/widgets.php:156
-msgid "Resolution:"
-msgstr "الحالة:"
+#: ../src/bbResolutions/src/Main.php:76
+msgid "Not Resolved"
+msgstr "بدون حل"
 
-#: ../includes/bbpress/topic-view.php:81
-msgid "Update"
-msgstr "تحديث"
+#: ../src/bbResolutions/src/Main.php:81
+msgid "Resolved"
+msgstr "تم الحل"
 
-#: ../includes/bbpress/widgets.php:20
+#: ../src/bbResolutions/src/Main.php:82
+msgid "[Resolved]"
+msgstr "[تم الحل]"
+
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:27
 msgid "(bbResolutions) Recent Topics"
 msgstr "(bbResolutions) أحدث الموضوعات"
 
-#: ../includes/bbpress/widgets.php:21
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:28
 msgid "A list of recent topics with an option to set the resolution."
 msgstr "قائمة بأحدث الموضوعات مع خيار لتحديد الحالة."
 
-#: ../includes/bbpress/widgets.php:85
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:87
 #, php-format
 msgid "by %1$s"
 msgstr "بواسطة %1$s"
 
-#: ../includes/bbpress/widgets.php:144
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:144
 msgid "Title:"
 msgstr "العنوان:"
 
-#: ../includes/bbpress/widgets.php:149
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:149
 msgid "Forum ID:"
 msgstr "الرقم المعرّف (ID) للمنتدى:"
 
-#: ../includes/bbpress/widgets.php:152
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:152
 msgid "\"0\" to show only root - \"any\" to show all"
 msgstr "\"0\" لإظهار الجذر فقط - \"any\" لإظهار الكل"
 
-#: ../includes/bbpress/widgets.php:161
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:156
+#: ../src/bbResolutions/src/bbpress/topic-view.php:64
+msgid "Resolution:"
+msgstr "الحالة:"
+
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:161
 msgid "Maximum topics to show:"
 msgstr "الحد الأقصى لعدد الموضوعات:"
 
-#: ../includes/bbpress/widgets.php:166
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:166
 msgid "Show topic author:"
 msgstr "عرض كاتب الموضوع:"
 
-#: ../includes/bbpress/widgets.php:171
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:171
 msgid "Show topic date:"
 msgstr "عرض تاريخ الموضوع:"
 
-#: ../includes/bbpress/widgets.php:186
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:186
 msgid "Recent Topics"
 msgstr "أحدث الموضوعات"
 
-#: ../includes/helpers.php:116
+#: ../src/bbResolutions/src/bbpress/topic-view.php:32
+#, php-format
+msgid "Topic Resolution: %s"
+msgstr "حالة الموضوع: %s"
+
+#: ../src/bbResolutions/src/bbpress/topic-view.php:74
+msgid "Update"
+msgstr "تحديث"
+
+#: ../src/bbResolutions/src/helpers.php:118
 msgid "None"
 msgstr "بدون"
-
-#: ../main.php:98
-msgid "Not a Question"
-msgstr "ليس سؤال"
-
-#: ../main.php:103
-msgid "Not Resolved"
-msgstr "بدون حل"
-
-#: ../main.php:108
-msgid "Resolved"
-msgstr "تم الحل"
-
-#: ../main.php:109
-msgid "[Resolved]"
-msgstr "[تم الحل]"
 
 #~ msgid "<b>%s</b> said:"
 #~ msgstr "<b>%s</b> قال :"

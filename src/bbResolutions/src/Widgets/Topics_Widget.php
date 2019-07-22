@@ -1,19 +1,26 @@
 <?php
+/**
+ * Recent topics widget class file.
+ *
+ * @package bbResolutions\Widgets
+ * @since   0.4
+ */
+namespace bbResolutions\Widgets;
 
-namespace bbResolutions;
+use WP_Widget;
 
 /**
- * Plugin's Recent Topics Widget
+ * Recent topics widget class.
  *
  * @uses  WP_Widget
- * @since 0.2.3
+ * @since 0.4
  */
-class Topics_Widget extends \WP_Widget
+class Topics_Widget extends WP_Widget
 {
     /**
      * Registers the topic widget
      *
-     * @since 0.2.3
+     * @since 0.4
      */
     public function __construct()
     {
@@ -25,7 +32,7 @@ class Topics_Widget extends \WP_Widget
     /**
      * Displays the output, the topic list
      *
-     * @since 0.2.3
+     * @since 0.4
      */
     public function widget($args = array(), $instance = array())
     {
@@ -99,7 +106,7 @@ class Topics_Widget extends \WP_Widget
     /**
      * Update the topic widget options
      *
-     * @since 0.2.3
+     * @since 0.4
      */
     public function update($new_instance = array(), $old_instance = array())
     {
@@ -127,7 +134,7 @@ class Topics_Widget extends \WP_Widget
     /**
      * Output the topic widget options form
      *
-     * @since 0.2.3
+     * @since 0.4
      */
     public function form($instance = array())
     {
@@ -171,7 +178,7 @@ class Topics_Widget extends \WP_Widget
     /**
      * Merge the widget settings into defaults array.
      *
-     * @since 0.2.3
+     * @since 0.4
      */
     public function parse_settings($instance = array())
     {
@@ -184,15 +191,4 @@ class Topics_Widget extends \WP_Widget
             'resolution'   => '',
         ));
     }
-}
-
-add_action('widgets_init', 'bbResolutions\register_widgets', 20);
-
-/**
- * @return void
- * @since 0.2.3
- */
-function register_widgets()
-{
-    register_widget('bbResolutions\Topics_Widget');
 }

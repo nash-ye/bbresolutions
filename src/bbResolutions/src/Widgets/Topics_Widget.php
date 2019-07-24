@@ -9,6 +9,7 @@ namespace bbResolutions\Widgets;
 
 use WP_Query;
 use WP_Widget;
+use bbResolutions;
 use bbResolutions\Manager;
 
 /**
@@ -156,7 +157,7 @@ class Topics_Widget extends WP_Widget
 
 		<p>
 			<label for="<?php echo $this->get_field_id('resolution') ?>"><?php _e('Resolution:', 'bbresolutions') ?></label>
-			<?php resolutions_dropdown(array( 'id' => $this->get_field_id('resolution'), 'name' => $this->get_field_name('resolution'), 'selected' => $settings['resolution'], 'show_none' => false )); ?>
+			<?php bbResolutions\resolutions_dropdown(array( 'id' => $this->get_field_id('resolution'), 'name' => $this->get_field_name('resolution'), 'selected' => $settings['resolution'], 'show_none' => false )); ?>
 		</p>
 
 		<p>

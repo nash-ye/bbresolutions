@@ -5,7 +5,7 @@
  * Description: A bbPress plugin to let you set topic resolutions.
  * Author: Nashwan Doaqan
  * Author URI: https://profiles.wordpress.org/alex-ye/
- * Version: 0.5
+ * Version: 0.6
  * Text Domain: bbresolutions
  * Domain Path: /locales
  *
@@ -20,7 +20,7 @@
  * @var   string
  * @since 0.1
  */
-define('bbResolutions\VERSION', '0.5');
+define('bbResolutions\VERSION', '0.6');
 
 /**
  * Plugin's codename.

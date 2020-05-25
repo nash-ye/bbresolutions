@@ -4,7 +4,7 @@ Tags: bbpress, buddypress, support
 Requires at least: 3.0
 Tested up to: 5.2.2
 Requires PHP: 5.3
-Stable tag: 0.6
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.patreon.com/nash1ye
@@ -28,6 +28,10 @@ Developers can contribute to the source code on the [Github Repository](https://
 * Have fun :-)
 
 == Changelog ==
+
+= 0.7 =
+* Enhance the codebase
+* Integrate Freemius
 
 = 0.6 =
 * Hotfix for Recent Topics widget.

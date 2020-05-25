@@ -27,9 +27,13 @@ class Topics_Widget extends WP_Widget
      */
     public function __construct()
     {
-        parent::__construct('bbr_topics_widget', __('(bbResolutions) Recent Topics', 'bbresolutions'), array(
-            'description' => __('A list of recent topics with an option to set the resolution.', 'bbresolutions'),
-        ));
+        parent::__construct(
+            'bbr_topics_widget',
+            __('(bbResolutions) Recent Topics', 'bbresolutions'),
+            [
+                'description' => __('A list of recent topics with an option to set the resolution.', 'bbresolutions'),
+            ]
+        );
     }
 
     /**
@@ -37,29 +41,29 @@ class Topics_Widget extends WP_Widget
      *
      * @since 0.4
      */
-    public function widget($args = array(), $instance = array())
+    public function widget($args = [], $instance = [])
     {
         $settings = $this->parse_settings($instance);
 
-        $query_args = array(
+        $query_args = [
             'post_type'           => bbp_get_topic_post_type(),
             'posts_per_page'      => (int) $settings['max_shown'],
-            'post_status'         => array( bbp_get_public_status_id(), bbp_get_closed_status_id() ),
+            'post_status'         => [bbp_get_public_status_id(), bbp_get_closed_status_id()],
             'post_parent'         => $settings['forum'],
             'ignore_sticky_posts' => true,
             'no_found_rows'       => true,
             'order'               => 'DESC',
-        );
+        ];
 
         $resolution = Manager::get_by_key($settings['resolution']);
 
         if (! empty($resolution)) {
-            $query_args['meta_query'] = array(
-                array(
+            $query_args['meta_query'] = [
+                [
                     'key'   => 'bbr_topic_resolution',
                     'value' => $resolution->value,
-                ),
-            );
+                ],
+            ];
         }
 
         $query = new WP_Query($query_args);
@@ -86,7 +90,13 @@ class Topics_Widget extends WP_Widget
 					<a class="bbp-forum-title" href="<?php bbp_topic_permalink($topic_id) ?>"><?php bbp_topic_title($topic_id) ?></a>
 					<?php
 						if (! empty($settings['show_user'])) {
-							$author_link = bbp_get_topic_author_link(array( 'post_id' => $topic_id, 'type' => 'both', 'size' => 14 ));
+							$author_link = bbp_get_topic_author_link(
+                                [
+                                    'post_id' => $topic_id, 
+                                    'type'    => 'both',
+                                    'size'    => 14
+                                ]
+                            );
 							printf(_x('by %1$s', 'widgets', 'bbresolutions'), '<span class="topic-author">' . $author_link . '</span>');
                         }
                     ?>
@@ -111,17 +121,17 @@ class Topics_Widget extends WP_Widget
      *
      * @since 0.4
      */
-    public function update($new_instance = array(), $old_instance = array())
+    public function update($new_instance = [], $old_instance = [])
     {
         $instance = $old_instance;
 
-        foreach (array( 'title', 'forum', 'resolution' ) as $field_name) {
+        foreach (['title', 'forum', 'resolution'] as $field_name) {
             if (isset($new_instance[ $field_name ])) {
                 $instance[ $field_name ] = strip_tags($new_instance[ $field_name ]);
             }
         }
 
-        foreach (array( 'show_user', 'show_date' ) as $field_name) {
+        foreach (['show_user', 'show_date'] as $field_name) {
             $instance[ $field_name ] = isset($new_instance[ $field_name ]);
         }
 
@@ -139,7 +149,7 @@ class Topics_Widget extends WP_Widget
      *
      * @since 0.4
      */
-    public function form($instance = array())
+    public function form($instance = [])
     {
         $settings = $this->parse_settings($instance); ?>
 
@@ -157,7 +167,16 @@ class Topics_Widget extends WP_Widget
 
 		<p>
 			<label for="<?php echo $this->get_field_id('resolution') ?>"><?php _e('Resolution:', 'bbresolutions') ?></label>
-			<?php bbResolutions\resolutions_dropdown(array( 'id' => $this->get_field_id('resolution'), 'name' => $this->get_field_name('resolution'), 'selected' => $settings['resolution'], 'show_none' => false )); ?>
+            <?php
+                bbResolutions\resolutions_dropdown(
+                    [
+                        'id'        => $this->get_field_id('resolution'),
+                        'name'      => $this->get_field_name('resolution'),
+                        'selected'  => $settings['resolution'],
+                        'show_none' => false,
+                    ]
+                );
+            ?>
 		</p>
 
 		<p>
@@ -183,15 +202,18 @@ class Topics_Widget extends WP_Widget
      *
      * @since 0.4
      */
-    public function parse_settings($instance = array())
+    public function parse_settings($instance = [])
     {
-        return wp_parse_args($instance, array(
-            'title'        => __('Recent Topics', 'bbresolutions'),
-            'max_shown'    => 5,
-            'show_date'    => false,
-            'show_user'    => false,
-            'forum'        => 'any',
-            'resolution'   => '',
-        ));
+        return wp_parse_args(
+            $instance,
+            [
+                'title'        => __('Recent Topics', 'bbresolutions'),
+                'max_shown'    => 5,
+                'show_date'    => false,
+                'show_user'    => false,
+                'forum'        => 'any',
+                'resolution'   => '',
+            ]
+        );
     }
 }

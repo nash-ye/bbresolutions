@@ -20,7 +20,7 @@ class Manager
      * @var   array
      * @since 0.1
      */
-    protected static $resolutions = array();
+    protected static $resolutions = [];
 
 
     /*** Methods **************************************************************/
@@ -68,9 +68,12 @@ class Manager
      */
     public static function get_by_value($value)
     {
-        $resolutions = self::filter(array(
-            'value' => $value,
-        ), 'OR');
+        $resolutions = self::filter(
+            [
+                'value' => $value,
+            ],
+            'OR'
+        );
 
         if (empty($resolutions)) {
             return;
@@ -93,11 +96,14 @@ class Manager
             return false;
         }
 
-        $args = (object) array_merge(array(
-            'label'     => '', // String
-            'value'     => '', // String
-            'sticker'   => '', // String
-        ), $args);
+        $args = (object) array_merge(
+            [
+                'label'     => '', // String
+                'value'     => '', // String
+                'sticker'   => '', // String
+            ],
+            $args
+        );
 
         $args->key = $key; // The key clone.
 

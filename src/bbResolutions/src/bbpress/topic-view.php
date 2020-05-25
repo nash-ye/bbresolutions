@@ -4,7 +4,7 @@ namespace bbResolutions;
 
 /**
  * @return void
- * @since 0.1
+ * @since  0.1
  */
 function topic_resolution_feedback($topic_id = 0)
 {
@@ -41,7 +41,7 @@ add_action('bbp_template_before_single_topic', 'bbResolutions\topic_resolution_f
 
 /**
  * @return void
- * @since 0.1
+ * @since  0.1
  */
 function topic_resolution_form($topic_id = 0)
 {
@@ -63,11 +63,13 @@ function topic_resolution_form($topic_id = 0)
 					<div class="bbr-field-wrapper">
 						<label for="bbr-topic-resolution"><?php esc_html_e('Resolution:', 'bbresolutions') ?></label>
 						<?php
-                            resolutions_dropdown(array(
-                                'selected' => get_topic_resolution_key($topic_id),
-                                'name'     => 'bbr_topic_resolution',
-                                'id'       => 'bbr-topic-resolution',
-							));
+                            resolutions_dropdown(
+                                [
+                                    'selected' => get_topic_resolution_key($topic_id),
+                                    'name'     => 'bbr_topic_resolution',
+                                    'id'       => 'bbr-topic-resolution',
+                                ]
+                            );
 						?>
 					</div>
 					<div class="bbr-submit-wrapper">
@@ -89,7 +91,7 @@ add_action('bbp_theme_before_topic_title', 'bbResolutions\topic_resolution_stick
 
 /**
  * @return void
- * @since 0.2
+ * @since  0.2
  */
 function topic_resolution_sticker($topic_id = 0)
 {
@@ -98,7 +100,7 @@ function topic_resolution_sticker($topic_id = 0)
 
 /**
  * @return string
- * @since 0.2
+ * @since  0.2
  */
 function get_topic_resolution_sticker($topic_id = 0)
 {
@@ -111,10 +113,10 @@ function get_topic_resolution_sticker($topic_id = 0)
     $resolution = get_topic_resolution_object($topic_id);
 
     if ($resolution !== null && ! empty($resolution->sticker)) {
-        $atts = array(
+        $atts = [
             'class' => "bbr-resolution-sticker bbr-resolution-{$resolution->key}-sticker",
             'title' => $resolution->label,
-        );
+        ];
 
         return '<span' . get_html_atts($atts) . '>' . $resolution->sticker . '</span>';
     }

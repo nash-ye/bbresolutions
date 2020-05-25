@@ -6,7 +6,7 @@ add_action('template_redirect', 'bbResolutions\topic_actions_handler', 11);
 
 /**
  * @return void
- * @since 0.1
+ * @since  0.1
  */
 function topic_actions_handler()
 {

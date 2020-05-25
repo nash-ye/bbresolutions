@@ -15,73 +15,69 @@ namespace bbResolutions;
 class Main
 {
     /**
-     * @return void
-     * @since 0.2
+     * Private constructor.
+     *
+     * @access private
+     * @since  1.0
      */
-    public function __construct()
+    private function __construct()
     {
-        $this->load_core();
-        $this->load_textdomain();
-        $this->register_defaults();
-
-        if (did_action('bbp_after_setup_actions')) {
-            $this->after_bbpress_setup();
-        } else {
-            add_action('bbp_after_setup_actions', array( $this, 'after_bbpress_setup' ));
-        }
-
-        if (did_action('bp_after_setup_actions')) {
-            $this->after_buddypress_setup();
-        } else {
-            add_action('bp_after_setup_actions', array( $this, 'after_buddypress_setup' ));
-        }
     }
 
     /**
      * @return void
-     * @since 0.2
+     * @since  0.7
      */
-    public function load_core()
+    public function loadCore()
     {
         // Load helper functions.
-        require trailingslashit(DIR_PATH) . 'src/bbResolutions/src/helpers.php';
+        require trailingslashit(PLUGIN_PATH) . 'src/bbResolutions/src/helpers.php';
     }
 
     /**
      * Load plugin's translations.
      * 
      * @return void
-     * @since  0.2
+     * @since  0.7
      */
-    public function load_textdomain()
+    public function loadTextdomain()
     {
         // Load the plugin translated strings.
-        load_plugin_textdomain('bbresolutions', false, basename(DIR_PATH) . '/locales');
+        load_plugin_textdomain('bbresolutions', false, basename(PLUGIN_PATH) . '/locales');
     }
 
     /**
      * Register default resolutions.
      * 
      * @return void
-     * @since  0.2
+     * @since  0.7
      */
-    public function register_defaults()
+    public function registerDefaults()
     {
-        Manager::register('not-support', array(
-            'label'     => __('Not a Question', 'bbresolutions'),
-            'value'     => '1',
-        ));
+        Manager::register(
+            'not-support',
+            [
+                'label'     => __('Not a Question', 'bbresolutions'),
+                'value'     => '1',
+            ]
+        );
 
-        Manager::register('not-resolved', array(
-            'label'     =>  __('Not Resolved', 'bbresolutions'),
-            'value'     => '2',
-        ));
+        Manager::register(
+            'not-resolved',
+            [
+                'label'     =>  __('Not Resolved', 'bbresolutions'),
+                'value'     => '2',
+            ]
+        );
 
-        Manager::register('resolved', array(
-            'label'     =>  __('Resolved', 'bbresolutions'),
-            'sticker'   => __('[Resolved]', 'bbresolutions'),
-            'value'     => '3',
-        ));
+        Manager::register(
+            'resolved',
+            [
+                'label'     =>  __('Resolved', 'bbresolutions'),
+                'sticker'   => __('[Resolved]', 'bbresolutions'),
+                'value'     => '3',
+            ]
+        );
     }
 
     /**
@@ -90,13 +86,13 @@ class Main
      * @return void
      * @since  0.2
      */
-    public function after_bbpress_setup()
+    public function afterBbpressSetup()
     {
         if (function_exists('is_bbpress')) {
-            require trailingslashit(DIR_PATH) . 'src/bbResolutions/src/bbpress/topic-control.php';
-            require trailingslashit(DIR_PATH) . 'src/bbResolutions/src/bbpress/topic-actions.php';
-            require trailingslashit(DIR_PATH) . 'src/bbResolutions/src/bbpress/topic-view.php';
-            require trailingslashit(DIR_PATH) . 'src/bbResolutions/src/bbpress/widgets.php';
+            require trailingslashit(PLUGIN_PATH) . 'src/bbResolutions/src/bbpress/topic-control.php';
+            require trailingslashit(PLUGIN_PATH) . 'src/bbResolutions/src/bbpress/topic-actions.php';
+            require trailingslashit(PLUGIN_PATH) . 'src/bbResolutions/src/bbpress/topic-view.php';
+            require trailingslashit(PLUGIN_PATH) . 'src/bbResolutions/src/bbpress/widgets.php';
         }
     }
 
@@ -106,10 +102,45 @@ class Main
      * @return void
      * @since  0.2
      */
-    public function after_buddypress_setup()
+    public function afterBuddypressSetup()
     {
         if (function_exists('is_buddypress')) {
             // TODO: Add support for BuddyPress plugin.
         }
+    }
+
+    /*** Singleton ************************************************************/
+
+    /**
+     * Create plugin's main instance once.
+     *
+     * @return self
+     * @since  1.0
+     * @static
+     */
+    public static function instance()
+    {
+        static $instance = null;
+
+        if (is_null($instance)) {
+            $instance = new self;
+            $instance->loadCore();
+            $instance->loadTextdomain();
+            $instance->registerDefaults();
+
+            if (did_action('bbp_after_setup_actions')) {
+                $instance->afterBbpressSetup();
+            } else {
+                add_action('bbp_after_setup_actions', [$instance, 'afterBbpressSetup']);
+            }
+    
+            if (did_action('bp_after_setup_actions')) {
+                $instance->afterBuddypressSetup();
+            } else {
+                add_action('bp_after_setup_actions', [$instance, 'afterBuddypressSetup']);
+            }
+        }
+
+        return $instance;
     }
 }

@@ -4,7 +4,7 @@ namespace bbResolutions;
 
 /**
  * @return string|null
- * @since 0.1
+ * @since  0.1
  */
 function get_topic_resolution_key($topic_id)
 {
@@ -19,7 +19,7 @@ function get_topic_resolution_key($topic_id)
 
 /**
  * @return string|bool
- * @since 0.1
+ * @since  0.1
  */
 function get_topic_resolution_value($topic_id)
 {
@@ -34,7 +34,7 @@ function get_topic_resolution_value($topic_id)
 
 /**
  * @return object|null
- * @since 0.1
+ * @since  0.1
  */
 function get_topic_resolution_object($topic_id)
 {
@@ -47,7 +47,7 @@ function get_topic_resolution_object($topic_id)
 
 /**
  * @return bool
- * @since 0.1
+ * @since  0.1
  */
 function update_topic_resolution($topic_id, $new_resolution)
 {
@@ -81,8 +81,8 @@ function update_topic_resolution($topic_id, $new_resolution)
 }
 
 /**
- * @retrun bool
- * @since 0.1
+ * @return bool
+ * @since  0.1
  */
 function delete_topic_resolution($topic_id)
 {

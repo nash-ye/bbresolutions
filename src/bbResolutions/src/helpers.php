@@ -10,7 +10,7 @@ namespace bbResolutions;
  * 
  * @since 0.1
  */
-function html_atts(array $atts, array $args = array())
+function html_atts(array $atts, array $args = [])
 {
     echo get_html_atts($atts, $args);
 }
@@ -27,7 +27,7 @@ function html_atts(array $atts, array $args = array())
  * @return string
  * @since  0.1
  */
-function get_html_atts(array $atts, array $args = array())
+function get_html_atts(array $atts, array $args = [])
 {
     $output = '';
 
@@ -35,11 +35,14 @@ function get_html_atts(array $atts, array $args = array())
         return $output;
     }
 
-    $args = array_merge(array(
-        'after' => '',
-        'before' => ' ',
-        'escape' => true,
-    ), (array) $args);
+    $args = array_merge(
+        [
+            'after' => '',
+            'before' => ' ',
+            'escape' => true,
+        ],
+        (array) $args
+    );
 
     foreach ($atts as $key => $value) {
         $key = esc_html($key);
@@ -81,7 +84,7 @@ function get_html_atts(array $atts, array $args = array())
  * @return void
  * @since  0.1
  */
-function resolutions_dropdown(array $args = array())
+function resolutions_dropdown(array $args = [])
 {
     echo get_resolutions_dropdown($args);
 }
@@ -90,27 +93,33 @@ function resolutions_dropdown(array $args = array())
  * @return string
  * @since  0.1
  */
-function get_resolutions_dropdown(array $args = array())
+function get_resolutions_dropdown(array $args = [])
 {
-    $args = array_merge(array(
-        'id'          => '',
-        'name'        => '',
-        'atts'        => array(
-            'class' => 'bbr-resolutions-dropdown',
-        ),
-        'selected'    => '',
-        'resolutions' => 'all',
-        'show_none'   => true,
-    ), $args);
+    $args = array_merge(
+        [
+            'id'          => '',
+            'name'        => '',
+            'atts'        => [
+                'class' => 'bbr-resolutions-dropdown',
+            ],
+            'selected'    => '',
+            'resolutions' => 'all',
+            'show_none'   => true,
+        ],
+        $args
+    );
 
     if ('all' === $args['resolutions']) {
         $args['resolutions'] = Manager::get_all();
     }
 
-    $args['atts'] = array_merge($args['atts'], array(
-        'name' => $args['name'],
-        'id' => $args['id'],
-    ));
+    $args['atts'] = array_merge(
+        $args['atts'],
+        [
+            'name' => $args['name'],
+            'id' => $args['id'],
+        ]
+    );
 
     $output = '<select'. get_html_atts($args['atts']) .'>';
 
@@ -122,10 +131,12 @@ function get_resolutions_dropdown(array $args = array())
         foreach ($args['resolutions'] as $resolution) {
             $option_label = esc_html($resolution->label);
 
-            $option_atts = get_html_atts(array(
-                'value' => $resolution->key,
-                'selected' => ($args['selected'] == $resolution->key),
-            ));
+            $option_atts = get_html_atts(
+                [
+                    'value'    => $resolution->key,
+                    'selected' => ($args['selected'] == $resolution->key),
+                ]
+            );
 
             $output .= "<option{$option_atts}>{$option_label}</option>";
         }

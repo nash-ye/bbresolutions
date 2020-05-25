@@ -1,10 +1,9 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: bbResolutions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-19 19:42+0300\n"
-"PO-Revision-Date: 2016-02-22 16:06+0300\n"
+"POT-Creation-Date: 2020-05-25 05:54+0300\n"
+"PO-Revision-Date: 2020-05-25 05:54+0300\n"
 "Last-Translator: Nashwan Doaqan <nashwan.doaqan@ymail.com>\n"
 "Language-Team: Nashwan Doaqan <nashwan.doaqan@gmail.com>\n"
 "Language: en\n"
@@ -14,81 +13,82 @@ msgstr ""
 "X-Poedit-KeywordsList: __;esc_attr__;esc_html__;_e;esc_attr_e;esc_html_e;_x;"
 "_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/bbpress/topic-view.php:34
-#, php-format
-msgid "Topic Resolution: %s"
+#: ../src/bbResolutions/src/Main.php:60
+msgid "Not a Question"
 msgstr ""
 
-#: ../includes/bbpress/topic-view.php:69 ../includes/bbpress/widgets.php:156
-msgid "Resolution:"
+#: ../src/bbResolutions/src/Main.php:68
+msgid "Not Resolved"
 msgstr ""
 
-#: ../includes/bbpress/topic-view.php:81
-msgid "Update"
+#: ../src/bbResolutions/src/Main.php:76
+msgid "Resolved"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:20
+#: ../src/bbResolutions/src/Main.php:77
+msgid "[Resolved]"
+msgstr ""
+
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:32
 msgid "(bbResolutions) Recent Topics"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:21
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:34
 msgid "A list of recent topics with an option to set the resolution."
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:85
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:100
 #, php-format
 msgid "by %1$s"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:144
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:157
 msgid "Title:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:149
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:162
 msgid "Forum ID:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:152
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:165
 msgid "\"0\" to show only root - \"any\" to show all"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:161
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:169
+#: ../src/bbResolutions/src/bbpress/topic-view.php:64
+msgid "Resolution:"
+msgstr ""
+
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:183
 msgid "Maximum topics to show:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:166
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:188
 msgid "Show topic author:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:171
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:193
 msgid "Show topic date:"
 msgstr ""
 
-#: ../includes/bbpress/widgets.php:186
+#: ../src/bbResolutions/src/Widgets/Topics_Widget.php:210
 msgid "Recent Topics"
 msgstr ""
 
-#: ../includes/helpers.php:116
+#: ../src/bbResolutions/src/bbpress/topic-view.php:32
+#, php-format
+msgid "Topic Resolution: %s"
+msgstr ""
+
+#: ../src/bbResolutions/src/bbpress/topic-view.php:76
+msgid "Update"
+msgstr ""
+
+#: ../src/bbResolutions/src/helpers.php:127
 msgid "None"
-msgstr ""
-
-#: ../main.php:98
-msgid "Not a Question"
-msgstr ""
-
-#: ../main.php:103
-msgid "Not Resolved"
-msgstr ""
-
-#: ../main.php:108
-msgid "Resolved"
-msgstr ""
-
-#: ../main.php:109
-msgid "[Resolved]"
 msgstr ""

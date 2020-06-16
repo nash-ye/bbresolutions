@@ -23,14 +23,14 @@ The plugin is also flexible and developer-friendly. Resolutions list can be modi
 
 Here is a list that highlights the main features of bbResolutions:
 - A robust and straightforward implementation.
-- *Resolutions Manager*: A simple API to register new resolutions with custom keys, labels, stickers, and values or unregister default ones.
-- *Front-end Form*:  A simple, customizable form that lets the topic's author easily and securely update the topic's resolution from the site front-end.
-- *Topics Stickers*: The plugin automatically adds a simple, customizable sticker to the topic title on the archive pages to easily distinguish topics with different resolutions.
-- *Widgets*: A simple widget to list topics with a predefined resolution such as "Issues To Be Resolved" or "Recently Resolved Issues"...etc.
-- *Developer-friendly*: The plugin has dozens of actions and organized functions that can be utilized to integrate the plugin into a broad set of projects and use-cases.
-- *Compatibility*: The plugin is fully compatible with the latest version of bbPress, WordPress, and PHP.
-- *Performance*: High performance with minimal footprint, optimized, and regularly checked codebase.
-- *Multilingual*: The plugin is ready to be translated into your language!
+- **Resolutions Manager**: A simple API to register new resolutions with custom keys, labels, stickers, and values or unregister default ones.
+- **Front-end Form**:  A simple, customizable form that lets the topic's author easily and securely update the topic's resolution from the site front-end.
+- **Topics Stickers**: The plugin automatically adds a simple, customizable sticker to the topic title on the archive pages to easily distinguish topics with different resolutions.
+- **Widgets**: A simple widget to list topics with a predefined resolution such as "Issues To Be Resolved" or "Recently Resolved Issues"...etc.
+- **Developer-friendly**: The plugin has dozens of actions and organized functions that can be utilized to integrate the plugin into a broad set of projects and use-cases.
+- **Compatibility**: The plugin is fully compatible with the latest version of bbPress, WordPress, and PHP.
+- **Performance**: High performance with minimal footprint, optimized, and regularly checked codebase.
+- **Multilingual**: The plugin is ready to be translated into your language!
 
 = Contributing =
 Developers can contribute to the source code on the [Github Repository](https://github.com/nash-ye/bbresolutions).

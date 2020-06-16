@@ -10,7 +10,7 @@ The plugin is also flexible and developer-friendly. Resolutions list can be modi
 
 Here is a list that highlights the main features of bbResolutions:
 - A robust and straightforward implementation.
-- Resolutions Manager: A simple API to register new resolutions with custom keys, labels, stickers, and values or unregister default ones.
+- **Resolutions Manager**: A simple API to register new resolutions with custom keys, labels, stickers, and values or unregister default ones.
 - **Front-end Form**:  A simple, customizable form that lets the topic's author easily and securely update the topic's resolution from the site front-end.
 - **Topics Stickers**: The plugin automatically adds a simple, customizable sticker to the topic title on the archive pages to easily distinguish topics with different resolutions.
 - **Widgets**: A simple widget to list topics with a predefined resolution such as "Issues To Be Resolved" or "Recently Resolved Issues"...etc.
